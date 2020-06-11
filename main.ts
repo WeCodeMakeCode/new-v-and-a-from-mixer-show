@@ -108,7 +108,6 @@ slider_velocity_y = slider.create(0, -100, 100, 6, 100, Orientation.Vertical)
 slider_velocity_y.left = 3
 slider_acceleration_X = slider.create(0, -100, 100, 100, 6, Orientation.Horizontal)
 slider_acceleration_X.top = 14
-slider_velocity_X = slider.create(0, -100, 100, 100, 6, Orientation.Horizontal)
 slider_acceleration_Y = slider.create(0, -100, 100, 6, 100, Orientation.Vertical)
 slider_acceleration_Y.left = 150
 show_all_labels()
