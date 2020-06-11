@@ -1,0 +1,17 @@
+{
+    "name": "new v and a from mixer show",
+    "dependencies": {
+        "device": "*",
+        "slider ext": "github:wecodemakecode/slider-ext#dc6a47d4fffbb82fecd2f5c06e73abeed7a4878a"
+    },
+    "description": "",
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "preferredEditor": "blocksprj",
+    "testFiles": [
+        "test.ts"
+    ]
+}
