@@ -1,5 +1,5 @@
 function change_x (amount: number) {
-    if (!(b_doing_slider_labels)) {
+    if (!(b_flashing_labels)) {
         active_X.value += amount
         if (slider_velocity_X.selected) {
             mySprite.vx += amount
@@ -16,7 +16,7 @@ function select_velocity_sliders () {
     slider_labels("v")
 }
 function change_y (amount: number) {
-    if (!(b_doing_slider_labels)) {
+    if (!(b_flashing_labels)) {
         active_Y.value += amount
         if (slider_velocity_y.selected) {
             mySprite.vy += 0 - amount
@@ -56,13 +56,13 @@ function select__accelerationD_Slides () {
     slider_labels("a")
 }
 function show_all_labels () {
-    b_doing_slider_labels = true
+    b_flashing_labels = true
     slider_velocity_X.thumb_sprite.say("vx")
     slider_velocity_y.thumb_sprite.say("vy")
     slider_acceleration_X.thumb_sprite.say("ax")
     slider_acceleration_Y.thumb_sprite.say("ay")
     pause(2000)
-    b_doing_slider_labels = false
+    b_flashing_labels = false
 }
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     change_x(1)
@@ -88,14 +88,14 @@ controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
     change_x(-1)
 })
 function slider_labels (label: string) {
-    b_doing_slider_labels = true
+    b_flashing_labels = true
     active_X.thumb_sprite.say("" + label + "x")
     active_Y.thumb_sprite.say("" + label + "y")
     pause(1000)
-    b_doing_slider_labels = false
+    b_flashing_labels = false
 }
 let mySprite: Sprite = null
-let b_doing_slider_labels = false
+let b_flashing_labels = false
 let active_Y: Slider = null
 let active_X: Slider = null
 let slider_acceleration_Y: Slider = null
@@ -114,9 +114,9 @@ show_all_labels()
 active_X = slider_velocity_X
 active_Y = slider_velocity_y
 set_active_selected(true)
-b_doing_slider_labels = false
+b_flashing_labels = false
 game.onUpdate(function () {
-    if (!(b_doing_slider_labels)) {
+    if (!(b_flashing_labels)) {
         slider_velocity_X.value = Math.round(mySprite.vx)
         slider_velocity_y.value = 0 - Math.round(mySprite.vy)
         slider_acceleration_X.value = Math.round(mySprite.ax)
